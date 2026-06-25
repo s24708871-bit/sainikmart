@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout — SainikMart</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">
+      <span class="logo-sainik">Sainik</span><span class="logo-mart">Mart</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="cart-btn" onclick="window.location.href='cart.html'">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Checkout</h1>
+  <p>Fill in your details and place your order</p>
+</div>
+
+<section class="checkout-section">
+  <div class="container">
+    <div class="checkout-grid">
+
+      <!-- LEFT: FORM -->
+      <div>
+        <div class="checkout-form">
+          <h2>Delivery Details</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="fullName" placeholder="Enter your full name"/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="phone" placeholder="10-digit mobile number" maxlength="10"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Full Address *</label>
+            <textarea id="address" rows="3" placeholder="House No., Street, Area, Landmark..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>City *</label>
+              <input type="text" id="city" placeholder="City"/>
+            </div>
+            <div class="form-group">
+              <label>Pincode *</label>
+              <input type="text" id="pincode" placeholder="6-digit pincode" maxlength="6"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" id="state" placeholder="State"/>
+          </div>
+          <div class="form-group">
+            <label>Order Notes (Optional)</label>
+            <textarea id="notes" rows="2" placeholder="Any special instructions for delivery..."></textarea>
+          </div>
+        </div>
+
+        <div class="checkout-form" style="margin-top:20px">
+          <h2>Payment Method</h2>
+          <div class="payment-option">
+            <i class="fas fa-money-bill-wave"></i>
+            <div>
+              <strong>Cash on Delivery (COD)</strong>
+              <span>Pay when your order arrives at your doorstep. Safe and hassle-free.</span>
+            </div>
+          </div>
+          <p style="margin-top:12px;font-size:13px;color:#666">
+            <i class="fas fa-info-circle" style="color:#1A7A4A"></i>
+            &nbsp;Currently we only accept Cash on Delivery. Please keep the exact amount ready.
+          </p>
+          <button class="place-order-btn" onclick="placeOrder()">
+            <i class="fas fa-check-circle"></i> Place Order — Cash on Delivery
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <div class="order-summary-box">
+        <h3>Order Summary</h3>
+        <div id="orderSummaryItems"></div>
+        <div class="order-item summary-total" style="border-top:1px solid #eee;padding-top:12px;margin-top:8px;font-weight:700;font-size:16px;color:#1A7A4A">
+          <span>Total Amount</span>
+          <span id="orderTotal">₹0</span>
+        </div>
+        <p style="font-size:12px;color:#888;margin-top:12px;text-align:center">
+          <i class="fas fa-shield-halved" style="color:#1A7A4A"></i>
+          &nbsp;Safe & secure ordering
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom"><p>© 2026 SainikMart. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
